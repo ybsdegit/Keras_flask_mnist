@@ -1,0 +1,32 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+
+html {
+	height: 100%;
+	background: #EEE;}
+
+h1 {
+	position: absolute;
+	text-align: center;
+	left:0;
+	right:0;
+	font-family: 'Open Sans', Helvetica;
+	color: #807F7D;
+	font-size: 25px;
+	font-weight: 300;
+	z-index: -1;
+}
+
+#canvas {
+	position: relative;
+	border: 8px solid;
+	margin: auto;
+	margin-top: 160px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.centered {
+	position: relative;
+	text-align: center;
+}
