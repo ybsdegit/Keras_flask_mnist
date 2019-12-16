@@ -6,10 +6,10 @@
 
 	var Mouse = {x:0, y:0};
 	var lastMouse = {x:0, y:0};
-	context.fillStyle = "white";
+	context.fillStyle = "black";
 	context.fillRect(0, 0, canvas.width, canvas.height);
-	context.color = "black";
-	context.lineWidth = 7;
+	context.color = "white";
+	context.lineWidth = 10;
     context.lineJoin = context.lineCap = 'round';
 
 	debug();
@@ -46,15 +46,9 @@
 	function debug() {
 		$("#clearButton").on("click", function() {
 			context.clearRect( 0, 0, 280, 280 );
-			context.fillStyle="white";
+			context.fillStyle="black";
 			context.fillRect(0,0,canvas.width,canvas.height);
 		});
 	}
 }());
 
-// this prevents the site from idling
-// since it takes the flask app about 20 seconds to start up again
-var http = require("http");
-setInterval(function() {
-    http.get("http://mnist-flask-app.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
