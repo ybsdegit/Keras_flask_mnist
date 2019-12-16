@@ -1,18 +1,29 @@
 # Keras_flask_mnist
-基于 Keras + Flask 的 Mnist 手写数字集识别系统
- 太难了
-![result](https://github.com/ybsdegit/Keras_flask_mnist/blob/master/%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99.gif)
+基于 TensorFlow2.0 （Keras） + Flask 的 Mnist 手写数字集识别系统
 
+- 下载
 
-- 运行
+- 安装依赖
 ```
-python train.py
+pip install -r requirements.txt
+```
 
+# 运行
+
+- 启动服务
+```
 python app.py
 ```
-### 声明
-有人反映说100% 识别识别，虽然我上面放的演示是识别的，但我在12.16日上午调代码后成功率还可以的
-新的结果看我博客
+本地启动访问地址为：`http://localhost:3335/`
+
+- 训练
+源码中也包含训练好的模型 `model.h5`,测试集成功率99.9，也可以自行训练。
+```
+python model/train.py
+```
+
+
+### 博客
 ```
 https://blog.csdn.net/qq_38534107/article/details/103565899
 ```
