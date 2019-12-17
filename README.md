@@ -1,6 +1,11 @@
 # Keras_flask_mnist
 基于 TensorFlow2.0 （Keras） + Flask 的 Mnist 手写数字集识别系统
 
+- 演示地址
+```
+http://112.126.101.188:3335/
+```
+
 - 下载
 
 - 安装依赖
