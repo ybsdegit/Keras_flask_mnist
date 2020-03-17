@@ -1,8 +1,14 @@
 # Keras_flask_mnist
 基于 TensorFlow2.0 （Keras） + Flask 的 Mnist 手写数字集识别系统
 
-- 下载
+### 更新记录
+- 2020-03-17 使用redis实现记录访问次数的功能
 
+### 部署
+- 下载
+```c
+git clone https://github.com/ybsdegit/Keras_flask_mnist.git
+```
 - 安装依赖
 ```
 pip install -r requirements.txt
