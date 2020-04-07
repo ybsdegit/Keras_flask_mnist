@@ -10,7 +10,7 @@ import re
 import base64
 import numpy as np
 import tensorflow.keras as keras
-from flask_cors import *
+from flask_cors import CORS
 from flask import Flask, render_template, request, jsonify
 from tensorflow.keras.preprocessing.image import img_to_array, load_img
 
