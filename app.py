@@ -11,6 +11,7 @@ import json
 import base64
 import numpy as np
 import tensorflow.keras as keras
+from flask_cors import *
 from flask import Flask, render_template, request, jsonify
 from tensorflow.keras.preprocessing.image import img_to_array, load_img
 
@@ -18,16 +19,23 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from redis_util import get_today, get_visit_num_all, get_visit_num_today, inc_visit_num
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)  # 设置跨域
 
 model_file = './model/model.h5'
 global model
 model = keras.models.load_model(model_file)
 
 @app.route('/')
+def home():
+    inc_visit_num()
+    response = get_visit_info()
+    return jsonify(response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
+
+@app.route('/home')
 def index():
     inc_visit_num()
     response = get_visit_info()
-    return render_template("index2.html", **response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
+    return jsonify(response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
 
 @app.route('/predict/', methods=['Get', 'POST'])
 def preditc():
