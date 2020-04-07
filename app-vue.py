@@ -16,8 +16,7 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 
 # 使用 redis 统计总访问次数，今日访问次数
 from redis_util import get_today, get_visit_num_all, get_visit_num_today, inc_visit_num
-
-app = Flask(__name__, static_folder="./dist/", template_folder="./dist")
+app = Flask(__name__)
 CORS(app, supports_credentials=True)  # 设置跨域
 
 model_file = './model/model.h5'
