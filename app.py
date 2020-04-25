@@ -26,10 +26,10 @@ global model
 model = keras.models.load_model(model_file)
 
 @app.route('/')
-def home():
+def index():
     inc_visit_num()
     response = get_visit_info()
-    return jsonify(response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
+    return render_template("index2.html", **response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
 
 @app.route('/home')
 def index():

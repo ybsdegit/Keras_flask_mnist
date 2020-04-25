@@ -20,16 +20,23 @@ TODAY_KEY = "TODAY"  # 今日日期
 TODAY_TIME_KEY = "TODAY_TIME"  # 今日访问次数
 
 # 初始化redis
-r = redis.StrictRedis(host=REDIS_HOST)
+try:
+    r = redis.StrictRedis(host=REDIS_HOST)
+except:
+    print("请查看redis设置")
 
 # 当前访问次数 查看日志中请求的次数，设置初始值  wc -l nohup.out
 # 8390
 # r.set(MINIST_KEY, 8390)
 # r.set(TODAY_TIME_KEY, 1)
 # 从redis中获取当前的访问次数
-r.get(MINIST_KEY)
+
 
 def inc_visit_num():
+    count = int(r.get(MINIST_KEY).decode())
+    print(count)
+    if count < 10000:
+        return
     r.incr(MINIST_KEY)
     if (get_today().encode() == r.get(TODAY_KEY)):
         r.incr(TODAY_TIME_KEY)

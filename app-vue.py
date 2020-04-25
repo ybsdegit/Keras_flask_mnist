@@ -25,12 +25,14 @@ model = keras.models.load_model(model_file)
 
 
 @app.route('/')
-def home():
-    return render_template('index.html', name='index')
+def index():
+    inc_visit_num()
+    response = get_visit_info()
+    return render_template("index2.html", **response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
 
 
 @app.route('/home')
-def index():
+def home():
     inc_visit_num()
     response = get_visit_info()
     return jsonify(response)  # 如果没有使用 redis 统计访问次数功能，请使用index.html
@@ -64,4 +66,4 @@ def parseImage(imgData):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3336)
+    app.run(host="0.0.0.0", port=3335)
