@@ -15,15 +15,16 @@ from datetime import date
 
 
 REDIS_HOST = "112.126.101.188"  # redis host
+REDIS_PASSWORD = "ybsdemima@ybs"
 MINIST_KEY = "MINIST"  # 总访问次数
 TODAY_KEY = "TODAY"  # 今日日期
 TODAY_TIME_KEY = "TODAY_TIME"  # 今日访问次数
 
 # 初始化redis
 try:
-    r = redis.StrictRedis(host=REDIS_HOST)
+    r = redis.StrictRedis(host=REDIS_HOST, password=REDIS_PASSWORD)
 except:
-    print("请查看redis是否配置")
+    print("redis 连接异常")
 # 当前访问次数 查看日志中请求的次数，设置初始值  wc -l nohup.out
 # 8390
 # r.set(MINIST_KEY, 8390)
