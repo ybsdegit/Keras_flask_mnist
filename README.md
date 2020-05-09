@@ -9,7 +9,8 @@
 
 - 演示地址
 ```
-http://112.126.101.188:3335/
+http://112.126.101.188:3335/  （公网IP访问）
+http://paulson.free.idcfengye.com/ （内网穿透 ngrox 域名访问） 可以看下面我的博客链接地址
 ```
 
 - 下载
@@ -41,7 +42,8 @@ python model/train.py
 
 ### 博客
 ```
-https://blog.csdn.net/qq_38534107/article/details/103565899
+https://blog.csdn.net/qq_38534107/article/details/103565899 （mnist）
+https://blog.csdn.net/qq_38534107/article/details/106009215 （内网穿透）
 ```
 
 
